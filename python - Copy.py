@@ -47,7 +47,7 @@ def handleInput(response):
             nic = input("Enter the customers nic:\n")
             found = False
             for customer in customers:
-            if customer['NIC'] == nic:
+                if customer['NIC'] == nic:
                     amount = get_integer_input("Enter the amount to be deposited: ")
                     print("The amount " + str(amount) + " has been deposited in your bank")
                     customer['amount'] += amount
@@ -63,17 +63,18 @@ def handleInput(response):
             nic = input("Enter the customers nic:\n")
             found = False
             for customer in customers:
-            if customer['NIC'] == nic:
+                if customer['NIC'] == nic:
                     amount = get_integer_input("Enter the amount to be withdrawed: ")
-		        if customer['amount'] <= amount:
-                      print("Sorry insufficient blance")
-                  else:
-     			      print("Your transaction was successful")
-                      print("The amount " + str(amount) + " has been withdrawed from your account")
-                      customer['amount'] -= amount
-                      print("\n"+customer["name"]+"\t\t"+str(customer['amount']))
+                    if customer['amount'] <= amount:
+                        print("Sorry insufficient blance")
+                    else:
+                        print("Your transaction was successful")
+                        print("The amount " + str(amount) + " has been withdrawed from your account")
+                        customer['amount'] -= amount
+                        print("\n"+customer["name"]+"\t\t"+str(customer['amount']))
                     found = True
-			            if not found:
+			
+            if not found:
                 print("Sorry the customer name could not be found!")
 
             print("")
